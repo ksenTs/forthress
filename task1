@@ -1,3 +1,16 @@
 ( if number is odd - 1, else - 0 )
 : isEven 2 % ;
 
+( if number is prime - 1, else 0 )
+: isPrime
+dup 2 < not 
+if
+    1 >r
+    repeat 
+        dup r> 1 + dup >r % not 
+    until 
+    r>
+    =
+else 
+    drop 0 then
+;
