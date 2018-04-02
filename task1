@@ -29,3 +29,16 @@ else
 	dup rot + rot 
 	string-copy 
 ;
+
+: collatz 
+repeat 
+    dup 1 = not 
+    if 
+        dup 2 % 
+        if 
+            3 * 1 + dup . cr 0 
+        else 
+            2 / dup . cr 0 
+        then 
+    then 
+until ;
